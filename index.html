@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Hangman Game</h1>
+        <div id="hangman">
+            <div class="gallows"></div>
+            <div class="rope"></div>
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="left-arm"></div>
+            <div class="right-arm"></div>
+            <div class="left-leg"></div>
+            <div class="right-leg"></div>
+        </div>
+        <p id="word-display">_ _ _ _ _</p>
+        <p class="instruction">Guess a letter:</p>
+        <input type="text" id="letter-input" maxlength="1" autofocus>
+        <button id="guess-button">Guess</button>
+        <p class="stats">Incorrect guesses: <span id="incorrect-guesses">0</span></p>
+        <p class="stats">Remaining attempts: <span id="remaining-attempts">6</span></p>
+        <p id="message"></p>
+        <button id="reset-button" style="display: none;">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

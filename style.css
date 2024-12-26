@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite alternate;
+}
+
+/* Background animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    animation: popIn 1s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    animation: textPulse 2s infinite alternate;
+}
+
+@keyframes textPulse {
+    0% {
+        color: #333;
+    }
+    100% {
+        color: #ff6a00;
+    }
+}
+
+.instruction {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#word-display {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #fff;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+}
+
+/* Hangman Styles */
+#hangman {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.gallows {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    top: 0;
+    left: 25px;
+    background: #000;
+}
+
+.rope,
+.head,
+.body,
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
+    position: absolute;
+    background: #000;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rope {
+    width: 5px;
+    height: 30px;
+    top: 10px;
+    left: 70px;
+}
+
+.head {
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    left: 55px;
+    border-radius: 50%;
+}
+
+.body {
+    width: 5px;
+    height: 60px;
+    top: 80px;
+    left: 70px;
+}
+
+.left-arm,
+.right-arm {
+    width: 5px;
+    height: 40px;
+    top: 80px;
+    transform-origin: top;
+}
+
+.left-arm {
+    left: 50px;
+    transform: rotate(-45deg);
+}
+
+.right-arm {
+    left: 85px;
+    transform: rotate(45deg);
+}
+
+.left-leg,
+.right-leg {
+    width: 5px;
+    height: 50px;
+    top: 140px;
+    transform-origin: top;
+}
+
+.left-leg {
+    left: 55px;
+    transform: rotate(-30deg);
+}
+
+.right-leg {
+    left: 75px;
+    transform: rotate(30deg);
+}
+
+/* Show animation for each part */
+.show {
+    opacity: 1;
+    transform: scale(1);
+}
